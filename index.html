@@ -412,15 +412,18 @@
     <!-- Animation. -->
     <div class="rows is-centered ">
       <div class="row is-full-width">
-        <h2 class="title is-3"><span class="dperact">Act3D</span></h2>
+        <h2 class="title is-3">Act3D</h2>
 
         <!-- Interpolating. -->
+        <!--
         <h3 class="title is-4">A Transformer for Detecting Actions</h3>
         <div class="content has-text-justified">
+        -->
         <!-- <br> -->
         </div>
         <p>
-          <span class="dperact">PerAct</span> is a language-conditioned behavior-cloning agent trained with supervised learning to <i>detect actions</i>. Instead of using object-detectors, instance-segmentors, or pose-estimators to represent a scene and then learning a policy, <span class="dperact">PerAct</span> directly learns <b>perceptual representations of actions</b> conditioned on language goals. This <a target="_blank" href="https://en.wikipedia.org/wiki/Ecological_psychology">action-centric approach</a> with a unified observation and action space makes <span class="dperact">PerAct</span> applicable to a broad range of tasks involving articulated objects, deformable objects, granular media, and even some non-prehensile interactions with tools.  
+          Act3D is a Transformer manipulation policy trained with supervised learning to predict a 6-DoF end-effector pose from one or more RGB-D images, a language instruction, and proprioception.
+          The key idea is to <b>detect</b> end-effector poses in the robot's workspace by <b>learning 3D perceptual representations of free space with arbitrary spatial resolution</b> via recurrent coarse-to-fine 3D point grid sampling and featurization.
         </p>
         </br>
         </br>
@@ -429,9 +432,9 @@
         </br>
         </br>
           <p>
-              <span class="dperact">PerAct</span> takes as input a language goal and a voxel grid reconstructed from RGB-D sensors. The voxels are split into 3D patches (like <a target="_blank" href="https://arxiv.org/abs/2010.11929">vision transformers</a> split images into 2D patches), and the language goal is encoded with a pre-trained language model. The language and voxel features are appended together as a sequence and encoded with a <a target=”_blank” href="https://www.deepmind.com/blog/building-architectures-that-can-handle-the-worlds-data">PerceiverIO Transformer</a> to learn per-voxel features. These features are then reshaped with linear layers to predict a discretized translation, rotation, gripper open, and collision avoidance action, which can be executed with a motion-planner. 
-              <!-- This action is executed with a motion-planner after which the new observation is used to predict the next discrete action in an observe-act loop until termination.  -->
-              Overall, the voxelized observation and action space provides a strong structural prior for efficiently learning 6-DoF polices. Checkout our <a target="_blank" href="https://colab.research.google.com/drive/1HAqemP4cE81SQ6QO1-N85j5bF4C0qLs0?usp=sharing">Colab Tutorial</a> for an annotated guide on implemententing <span class="dperact">PerAct</span> and training it from scratch on a single GPU.
+              Act3D featurizes multi-view RGB images with a pre-trained 2D backbone and lifts them in 3D using depth to obtain a multi-scale 3D scene feature cloud.
+              It then iteratively predicts 3D foci of attention in the free space, samples 3D point grids in their vicinity, and featurizes the sampled 3D points using relative cross-attention to the physical scene feature cloud, language tokens, and proprioception.
+              Act3D detects the 3D point corresponding to the next best end-effector position using a detection Transformer head and regresses the rotation, end-effector opening, and collision avoidance action.
           </p>
         </br>
         </br>
