@@ -127,11 +127,11 @@
             <span class="author-block">
               <a target="_blank" href="https://nickgkan.github.io/">Nikolaos Gkanatsios</a>,</span>
             <span class="author-block">
-              <a target="_blank" href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a>,</span>
+              <a target="_blank" href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a></span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Carnegie Mellon University,</span>
+            <span class="author-block">Carnegie Mellon University</span>
           </div>
 
           <div class="column has-text-centered">
@@ -296,11 +296,6 @@
     </div>
   </div>
 </section>
-<h2 class="subtitle has-text-centered">
-</br>
-  We also train <b>one multi-task Transformer from scratch</b> on 8 challenging real-world tasks with a total of just <b>100 demos</b>.
-</h2>
-
 
 <section class="hero is-light is-small">
   <div class="hero-body">
@@ -359,10 +354,10 @@
     </div>
   </div>
 </section>
-<h2 class="subtitle has-text-centered">
+<h3 class="subtitle has-text-centered">
 </br>
-  We also train <b>one multi-task Transformer from scratch</b> on 8 challenging real-world tasks with a total of just <b>100 demos</b>.
-</h2>
+  Act3D is a manipulation policy Transformer that casts <b>6-DoF keypose prediction as 3D detection with adaptive spatial computation</b>.
+</h3>
 
 
 <section class="section">
@@ -373,24 +368,18 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Transformers have revolutionized vision and natural language processing 
-            with their ability to scale with large datasets. But in robotic manipulation, 
-            data is both limited and expensive. Can we still benefit from Transformers with the right problem formulation? 
+            3D perceptual representations are well suited for robot manipulation as they easily encode occlusions and simplify spatial reasoning.
+            Many manipulation tasks require high spatial precision in end-effector pose prediction, typically demanding high-resolution 3D perceptual grids that are computationally expensive to process.
+            As a result,  most manipulation policies operate directly in 2D, foregoing 3D inductive biases.
           </p>
           <p>
-            We investigate this question with <span class="dperact">PerAct</span>, a
-            language-conditioned behavior-cloning agent for multi-task 6-DoF manipulation.
-            <span class="dperact">PerAct</span> encodes language goals and RGB-D voxel observations with a 
-            <a target=”_blank” href="https://www.deepmind.com/blog/building-architectures-that-can-handle-the-worlds-data">Perceiver Transformer</a>, and outputs discretized 
-            actions by “detecting the next best voxel action”. Unlike frameworks that operate on 2D images, the voxelized observation
-            and action space provides a strong structural prior for efficiently learning 6-DoF
-            policies. 
+            We propose Act3D, a manipulation policy Transformer that casts <b>6-DoF keypose prediction as 3D detection with adaptive spatial computation</b>.
+            It takes as input 3D feature clouds unprojected from one or more camera views, iteratively samples 3D point grids in free space in a coarse-to-fine manner, featurizes them using relative spatial attention to the physical feature cloud, and selects the best feature point for end-effector pose prediction.
           </p>
           <p>
-            With this formulation, we train <b>a single multi-task Transformer</b> for 18
-            <a target="_blank" href="https://sites.google.com/view/rlbench">RLBench</a> (with 249 variations) and 7 real-world tasks (with 18 variations) from just a few demonstrations per task. Our
-            results show that <span class="dperact">PerAct</span> significantly outperforms unstructured image-to-action
-            agents (by 34x) and 3D ConvNet baselines (by 2.8x) for a wide range of tabletop tasks.
+            Act3D sets a new state-of-the-art in RLbench, an established manipulation benchmark.
+            Our model achieves 10% absolute improvement over the previous SOTA 2D multi-view policy on 74 RLbench tasks and 22% absolute improvement with 3x less compute over the previous SOTA 3D policy.
+            In thorough ablations, we show the importance of relative spatial attention, large-scale vision-language pre-trained 2D backbones, and weight tying across coarse-to-fine attentions.
           </p>
         </div>
       </div>
