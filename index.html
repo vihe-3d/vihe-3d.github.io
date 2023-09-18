@@ -119,21 +119,23 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Act3D: Infinite Resolution Action Detection <br> Transformer for Robotic Manipulation</h1>
+          <h1 class="title is-2 publication-title">VIHE: Transformer-Based 3D Object <br> Manipulation Using Virtual In-Hand View</h1>
           <!-- <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">CoRL 2022</a></h3> -->
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a target="_blank" href="https://theophilegervet.github.io/">Theophile Gervet</a><sup>*</sup>,</span>
+              <a target="_blank" href="https://theophilegervet.github.io/">Weiyao Wang</a><sup>*</sup>,</span>
             <span class="author-block">
-              <a target="_blank" href="https://www.zhou-xian.com/">Zhou Xian</a><sup>*</sup>,</span>
+              <a target="_blank" href="https://www.zhou-xian.com/">Yutian Lei</a><sup>*</sup>,</span>
             <span class="author-block">
-              <a target="_blank" href="https://nickgkan.github.io/">Nikolaos Gkanatsios</a>,</span>
+              <a target="_blank" href="https://nickgkan.github.io/">Shiyu Jin</a>,</span>
             <span class="author-block">
-              <a target="_blank" href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a></span>
+              <a target="_blank" href="https://www.cs.cmu.edu/~katef/">Gregory D. Hager</a></span>
+              <span class="author-block">
+                <a target="_blank" href="https://www.cs.cmu.edu/~katef/">Liangjun Zhang</a></span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Carnegie Mellon University</span>
+            <span class="author-block">Baidu RAL</span>
           </div>
 
           <div class="column has-text-centered">
@@ -307,49 +309,37 @@
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-steve">
           <video poster="" id="steve" autoplay muted loop height="100%">
-            <source src="media/real/act3d_real_1.mp4"
+            <source src="media/real/vihe_real_1.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-fullbody">
           <video poster="" id="fullbody" autoplay muted loop height="100%">
-            <source src="media/real/act3d_real_2.mp4"
+            <source src="media/real/vihe_real_2.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/real/act3d_real_3.mp4"
+            <source src="media/real/vihe_real_3.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-blueshirt">
           <video poster="" id="blueshirt" autoplay muted loop height="100%">
-            <source src="media/real/act3d_real_4.mp4"
+            <source src="media/real/vihe_real_4.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/real/act3d_real_5.mp4"
+            <source src="media/real/vihe_real_5.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/real/act3d_real_6.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-       <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay muted loop height="100%">
-            <source src="media/real/act3d_real_7.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay muted loop height="100%">
-            <source src="media/real/act3d_real_8.mp4"
+            <source src="media/real/vihe_real_6.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -360,7 +350,8 @@
 </section>
 <h3 class="subtitle has-text-centered">
 </br>
-  Act3D is a manipulation policy Transformer that casts <b>6-DoF keypose prediction as 3D detection with adaptive spatial computation</b>
+The <strong>VIHE</strong> is a manipulation transformer leveraging <strong>action-aware view rendering</strong> for autoregressive <strong>hand keypoint prediction</strong>.
+
 </h3>
 
 
@@ -371,20 +362,31 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
+
           <p>
-            3D perceptual representations are well suited for robotic manipulation as they easily encode occlusions and simplify spatial reasoning.
-            Many manipulation tasks require high spatial precision in end-effector pose prediction, typically demanding high-resolution 3D perceptual grids that are computationally expensive to process.
-            As a result,  most manipulation policies operate directly in 2D, foregoing 3D inductive biases.
-          </p>
-          <p>
-            We propose Act3D, a manipulation policy Transformer that casts <b>6-DoF keypose prediction as 3D detection with adaptive spatial computation</b>.
-            It takes as input 3D feature clouds unprojected from one or more camera views, iteratively samples 3D point grids in free space in a coarse-to-fine manner, featurizes them using relative spatial attention to the physical feature cloud, and selects the best feature point for end-effector pose prediction.
-          </p>
-          <p>
-            Act3D sets a new state-of-the-art in RLbench, an established manipulation benchmark.
-            Our model achieves 10% absolute improvement over the previous SOTA 2D multi-view policy on 74 RLbench tasks and 22% absolute improvement with 3x less compute over the previous SOTA 3D policy.
-            In thorough ablations, we show the importance of relative spatial attention, large-scale vision-language pre-trained 2D backbones, and weight tying across coarse-to-fine attentions.
-          </p>
+            In this work, we introduce the <strong>Virtual In-Hand Eye Transformer (VIHE)</strong>, a novel method designed to enhance
+            3D manipulation capabilities through action-aware view rendering. For each action step, VIHE autoregressively refines a
+            prediction of hand keypoints in multiple stages by conditioning
+            on virtual in-hand views from the predicted hand pose in the
+            previous stage. The virtual in-hand views provide a strong
+            inductive bias for effectively recognizing the correct pose for
+            the hand to be placed, especially for challenging high-precision
+            tasks.
+        </p>
+        <p>
+            On 18 manipulation tasks in RLBench simulated environments, VIHE achieves the new state-of-the-art with 12%
+            absolute improvement from 65% to 77% over the existing
+            SOTA model using 100 demonstrations per task. Furthermore,
+            our average success rate with only 10 demonstrations per task
+            matches that of the current SOTA methods which use 100
+            demonstrations per task, making our approach <strong>10 times more
+            sample-efficient</strong>.
+        </p>
+        <p>
+            In real-world scenarios, VIHE can learn manipulation tasks with a handful of demonstrations, highlighting
+            its practical utility.
+        </p>
+          
         </div>
       </div>
     </div>
@@ -416,7 +418,7 @@
     <!-- Animation. -->
     <div class="rows is-centered ">
       <div class="row is-full-width">
-        <h2 class="title is-3">Act3D</h2>
+        <h2 class="title is-3">VIHE</h2>
 
         <!-- Interpolating. -->
         <!--
@@ -431,7 +433,7 @@
           The key idea is to <b>detect</b> end-effector poses in the robot's workspace by <b>learning 3D perceptual representations of free space with arbitrary spatial resolution</b> via recurrent coarse-to-fine 3D point grid sampling and featurization.
         </p>
         </br>
-        <img src="media/figures/arch.png" class="interpolation-image" 
+        <img src="media/figures/flow.png" class="interpolation-image" 
          alt="Interpolate start reference image." />
         </br>
         </br>
@@ -441,6 +443,8 @@
               Act3D detects the 3D point corresponding to the next best end-effector position using a detection Transformer head and regresses the rotation, end-effector opening, and collision avoidance action.
           </p>
         </br>
+        <img src="media/figures/teaser.png" class="interpolation-image" 
+         alt="Interpolate start reference image." />
         <br/>
 
         <!--/ Re-rendering. -->
@@ -453,7 +457,7 @@
         </p>
 
         </br>
-        <img src="media/figures/results_single_task.png" class="interpolation-image"
+        <img src="media/figures/result.png" class="interpolation-image"
          alt="Interpolate start reference image." />
         </br>
         </br>
@@ -463,7 +467,7 @@
         </p>
 
         </br>
-        <img src="media/figures/results_multi_task.png" class="interpolation-image"
+        <img src="media/figures/result_compare.png" class="interpolation-image"
          alt="Interpolate start reference image." />
         </br>
         </br>
