@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Act3D: Infinite Resolution Action Detection Transformer for Robotic Manipulation">
+  <meta name="description" content="Act3D: Infinite Resolution Action Detection Transformer for Robotic Manipulation">
   <meta name="keywords" content="Learning from Demonstrations, Manipulation, Transformers">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Act3D</title>
+  <title>VIHE</title>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FV4ZJ9PVSV"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-FV4ZJ9PVSV');
@@ -26,14 +26,14 @@
       console.log("single", demo, task, inst)
 
       var video = document.getElementById("multi-task-result-video");
-      video.src = "media/results/sim_rollouts/" + 
-                  "n" +
-                  demo +
-                  "-" +
-                  task +
-                  "-" +
-                  inst +
-                  ".mp4"
+      video.src = "media/results/sim_rollouts/" +
+        "n" +
+        demo +
+        "-" +
+        task +
+        "-" +
+        inst +
+        ".mp4"
       video.playbackRate = 1.75;
       video.play();
     }
@@ -44,24 +44,22 @@
       console.log("qpred", task)
 
       var video = document.getElementById("q-pred-video");
-      video.src = "media/results/qpred/" + 
-                  task + 
-                  ".mp4"
+      video.src = "media/results/qpred/" +
+        task +
+        ".mp4"
       video.playbackRate = 1.75;
       video.play();
     }
 
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -70,9 +68,10 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
+
 <body onload="updateSingleVideo(); updateQpredVideo();">
 
-<!--
+  <!-- 
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -111,37 +110,39 @@
     </div>
 
   </div>
-</nav>
--->
+</nav> -->
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-2 publication-title">VIHE: Transformer-Based 3D Object <br> Manipulation Using Virtual In-Hand View</h1>
-          <!-- <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">CoRL 2022</a></h3> -->
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a target="_blank" href="https://theophilegervet.github.io/">Weiyao Wang</a><sup>*</sup>,</span>
-            <span class="author-block">
-              <a target="_blank" href="https://www.zhou-xian.com/">Yutian Lei</a><sup>*</sup>,</span>
-            <span class="author-block">
-              <a target="_blank" href="https://nickgkan.github.io/">Shiyu Jin</a>,</span>
-            <span class="author-block">
-              <a target="_blank" href="https://www.cs.cmu.edu/~katef/">Gregory D. Hager</a></span>
-              <span class="author-block">
-                <a target="_blank" href="https://www.cs.cmu.edu/~katef/">Liangjun Zhang</a></span>
-          </div>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Baidu RAL</span>
-          </div>
-
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
           <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <!--
+            <h1 class="title is-2 publication-title">VIHE: Transformer-Based 3D Object <br> Manipulation Using Virtual
+              In-Hand View</h1>
+            <!-- <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">CoRL 2022</a></h3> -->
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a target="_blank" href="https://wangweiyao.github.io/about-me/">Weiyao Wang</a><sup>1,2</sup>,</span>
+              <span class="author-block">
+                <a target="_blank" href="https://doublelei.me/">Yutian Lei</a><sup> 1</sup>,</span>
+              <span class="author-block">
+                <a target="_blank" href="https://scholar.google.com/citations?user=GdYgso8AAAAJ&hl=en">Shiyu Jin</a><sup> 1</sup>,</span>
+              <span class="author-block">
+                <a target="_blank" href="https://www.cs.jhu.edu/hager/">Gregory D. Hager</a><sup> 2</sup>,</span>
+              <span class="author-block">
+                <a target="_blank" href="https://www.cs.unc.edu/~zlj/">Liangjun Zhang</a><sup> 1</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1 </sup><a target="_blank" href="http://research.baidu.com/Research_Areas/index-view?id=58">Baidu RAL,</a></span>
+              <span class="author-block"><sup>2 </sup><a target="_blank" href="https://www.jhu.edu/">Johns Hopkins University</a></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <!--
               <span class="link-block">
                 <a target="_blank" href="paper/peract_corl2022.pdf"
                    class="external-link button is-normal is-rounded is-dark">
@@ -153,19 +154,19 @@
               </span>
               -->
 
-            <!-- Arxiv Link. -->
-            <span class="link-block">
-              <a target="_blank" href="https://arxiv.org/abs/2306.17817"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fas fa-file"></i>
+                <!-- Arxiv Link. -->
+                <span class="link-block">
+                  <a target="_blank" href="https://arxiv.org/abs/2306.17817"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file"></i>
+                    </span>
+                    <span>ArXiv</span>
+                  </a>
                 </span>
-                <span>ArXiv</span>
-              </a>
-            </span>
 
-            <!-- Video Link. -->
-            <!--
+                <!-- Video Link. -->
+                <!--
             <span class="link-block">
               <a target="_blank" href="https://www.youtube.com/watch?v=TB0g52N-3_Y"
                  class="external-link button is-normal is-rounded is-dark">
@@ -177,8 +178,8 @@
             </span>
             -->
 
-            <!-- Talk Link. -->
-            <!--
+                <!-- Talk Link. -->
+                <!--
             <span class="link-block">
               <a target="_blank" href="https://youtu.be/QcuXwmQgurE"
                  class="external-link button is-normal is-rounded is-dark">
@@ -190,8 +191,8 @@
             </span>
             -->
 
-            <!-- Colab Link. -->
-            <!--
+                <!-- Colab Link. -->
+                <!--
             <span class="link-block">
               <a target="_blank" href="https://colab.research.google.com/drive/1HAqemP4cE81SQ6QO1-N85j5bF4C0qLs0?usp=sharing"
                  class="external-link button is-normal is-rounded is-dark">
@@ -203,199 +204,246 @@
             </span>
             -->
 
-            <!-- Code Link. -->
-            <span class="link-block">
-              <a target="_blank" href="https://github.com/zhouxian/chained-diffuser"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fab fa-github"></i>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a target="_blank" href="https://github.com/zhouxian/chained-diffuser"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
                 </span>
-                <span>Code</span>
-                </a>
-            </span>
 
+              </div>
             </div>
-          </div>
-<!--           <br>
+            <!--           <br>
           <br> -->
 
 
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay muted loop height="100%">
-            <source src="media/sim/act3d_sim_1.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay muted loop height="100%">
-            <source src="media/sim/act3d_sim_2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/sim/act3d_sim_3.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay muted loop height="100%">
-            <source src="media/sim/act3d_sim_4.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/sim/act3d_sim_5.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/sim/act3d_sim_6.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-       <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay muted loop height="100%">
-            <source src="media/sim/act3d_sim_7.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay muted loop height="100%">
-            <source src="media/sim/act3d_sim_8.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay muted loop height="100%">
-            <source src="media/sim/act3d_sim_9.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay muted loop height="100%">
-            <source src="media/sim/act3d_sim_10.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay muted loop height="100%">
-            <source src="media/sim/act3d_sim_11.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
+
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay muted loop height="100%">
+              <source src="media/sim/act3d_sim_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-fullbody">
+            <video poster="" id="fullbody" autoplay muted loop height="100%">
+              <source src="media/sim/act3d_sim_2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay muted loop height="100%">
+              <source src="media/sim/act3d_sim_3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-blueshirt">
+            <video poster="" id="blueshirt" autoplay muted loop height="100%">
+              <source src="media/sim/act3d_sim_4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay muted loop height="100%">
+              <source src="media/sim/act3d_sim_5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay muted loop height="100%">
+              <source src="media/sim/act3d_sim_6.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-chair-tp">
+            <video poster="" id="chair-tp" autoplay muted loop height="100%">
+              <source src="media/sim/act3d_sim_7.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-chair-tp">
+            <video poster="" id="chair-tp" autoplay muted loop height="100%">
+              <source src="media/sim/act3d_sim_8.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-chair-tp">
+            <video poster="" id="chair-tp" autoplay muted loop height="100%">
+              <source src="media/sim/act3d_sim_9.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-chair-tp">
+            <video poster="" id="chair-tp" autoplay muted loop height="100%">
+              <source src="media/sim/act3d_sim_10.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-chair-tp">
+            <video poster="" id="chair-tp" autoplay muted loop height="100%">
+              <source src="media/sim/act3d_sim_11.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+    </div>
+  </section>
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay muted loop height="100%">
-            <source src="media/real/vihe_real_1.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay muted loop height="100%">
-            <source src="media/real/vihe_real_2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/real/vihe_real_3.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay muted loop height="100%">
-            <source src="media/real/vihe_real_4.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/real/vihe_real_5.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/real/vihe_real_6.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay muted loop height="100%">
+              <source src="media/real/vihe_real_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-fullbody">
+            <video poster="" id="fullbody" autoplay muted loop height="100%">
+              <source src="media/real/vihe_real_2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay muted loop height="100%">
+              <source src="media/real/vihe_real_3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-blueshirt">
+            <video poster="" id="blueshirt" autoplay muted loop height="100%">
+              <source src="media/real/vihe_real_4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay muted loop height="100%">
+              <source src="media/real/vihe_real_5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay muted loop height="100%">
+              <source src="media/real/vihe_real_6.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<h3 class="subtitle has-text-centered">
-</br>
-The <strong>VIHE</strong> is a manipulation transformer leveraging <strong>action-aware view rendering</strong> for autoregressive <strong>hand keypoint prediction</strong>.
+    </div>
+  </section>
 
-</h3>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-
-          <p>
-            In this work, we introduce the <strong>Virtual In-Hand Eye Transformer (VIHE)</strong>, a novel method designed to enhance
-            3D manipulation capabilities through action-aware view rendering. For each action step, VIHE autoregressively refines a
-            prediction of hand keypoints in multiple stages by conditioning
-            on virtual in-hand views from the predicted hand pose in the
-            previous stage. The virtual in-hand views provide a strong
-            inductive bias for effectively recognizing the correct pose for
-            the hand to be placed, especially for challenging high-precision
-            tasks.
-        </p>
-        <p>
-            On 18 manipulation tasks in RLBench simulated environments, VIHE achieves the new state-of-the-art with 12%
-            absolute improvement from 65% to 77% over the existing
-            SOTA model using 100 demonstrations per task. Furthermore,
-            our average success rate with only 10 demonstrations per task
-            matches that of the current SOTA methods which use 100
-            demonstrations per task, making our approach <strong>10 times more
-            sample-efficient</strong>.
-        </p>
-        <p>
-            In real-world scenarios, VIHE can learn manipulation tasks with a handful of demonstrations, highlighting
-            its practical utility.
-        </p>
-          
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay muted loop height="100%">
+              <source src="media/real/vihe_real_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-fullbody">
+            <video poster="" id="fullbody" autoplay muted loop height="100%">
+              <source src="media/real/vihe_real_2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay muted loop height="100%">
+              <source src="media/real/vihe_real_3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-blueshirt">
+            <video poster="" id="blueshirt" autoplay muted loop height="100%">
+              <source src="media/real/vihe_real_4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay muted loop height="100%">
+              <source src="media/real/vihe_real_5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay muted loop height="100%">
+              <source src="media/real/vihe_real_6.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
+    </div>
+  </section>
 
-  </div>
+  <h3 class="subtitle has-text-centered">
+    </br>
+    The <strong>VIHE</strong> is a manipulation transformer leveraging <strong>action-aware view rendering</strong> for
+    autoregressive <strong>hand keypoint prediction</strong>.
+  </h3>
 
-  <!-- Paper video. -->
-  <!--
+  <section class="hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content has-text-centered">
+            <br>
+            <figure>
+              <a href="media/figures/result.png"><img src="media/figures/result.png" width="900px"></a>
+            </figure>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </section>
+  <h3 class="subtitle has-text-centered">
+    VIHE excels with <strong>10X less data and 5X less time</strong>, leveraging in-hand views' inductive bias.
+  </h3>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+
+            <p>
+              In this work, we introduce the <strong>Virtual In-Hand Eye Transformer (VIHE)</strong>, a novel method
+              designed to enhance
+              3D manipulation capabilities through action-aware view rendering. For each action step, VIHE
+              autoregressively refines a
+              prediction of hand keypoints in multiple stages by conditioning
+              on virtual in-hand views from the predicted hand pose in the
+              previous stage. The virtual in-hand views provide a strong
+              inductive bias for effectively recognizing the correct pose for
+              the hand to be placed, especially for challenging high-precision
+              tasks.
+            </p>
+            <p>
+              On 18 manipulation tasks in RLBench simulated environments, VIHE achieves the new state-of-the-art with
+              12% absolute improvement from 65% to 77% over the existing
+              SOTA model using 100 demonstrations per task. Furthermore,
+              our average success rate with only 10 demonstrations per task
+              matches that of the current SOTA methods which use 100
+              demonstrations per task, making our approach 10 times more sample-efficient.
+            </p>
+            <p>
+              In real-world scenarios, VIHE can learn manipulation tasks with a handful of demonstrations, highlighting
+              its practical utility.
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+    </div>
+
+    <!-- Paper video. -->
+    <!--
   <div class="columns is-centered has-text-centered">
     <div class="column is-two-thirds">
       <h2 class="title is-3">Video</h2>
@@ -407,81 +455,99 @@ The <strong>VIHE</strong> is a manipulation transformer leveraging <strong>actio
   </div>
   -->
 
-</section>
+  </section>
 
-<section class="section">
-  <div class="container is-max-widescreen">
+  <section class="section">
+    <div class="container is-max-widescreen">
 
-    <div class="rows">
+      <div class="rows">
 
 
-    <!-- Animation. -->
-    <div class="rows is-centered ">
-      <div class="row is-full-width">
-        <h2 class="title is-3">VIHE</h2>
+        <!-- Animation. -->
+        <div class="rows is-centered ">
+          <div class="row is-full-width">
+            <h2 class="title is-3">VIHE</h2>
 
-        <!-- Interpolating. -->
-        <!--
+            <!-- Interpolating. -->
+            <!--
         <h3 class="title is-4">A Transformer for Detecting Actions</h3>
         <div class="content has-text-justified">
         -->
-        <!-- <br> -->
+            <!-- <br> -->
+            <div>
+              </br>
+              <p>
+                Starting with <strong>RGB-D images</strong> from multi-view cameras, we first construct a <strong>point
+                  cloud</strong> of the scene. Global views are first
+                rendered using fixed cameras positioned around the workspace. From these global views, the network
+                outputs initial action predictions
+                <strong>a<sub>0</sub><sup>pose</sup></strong>,
+                <strong>a<sub>0</sub><sup>open</sup></strong>,
+                <strong>a<sub>0</sub><sup>col</sup></strong>.
+                Then at each refinement stage <strong>i</strong>, we autoregressively generate <strong>virtual in-hand
+                  views</strong> from cameras attached to the previously predicted gripper pose
+                <strong>a<sub>i−1</sub><sup>pose</sup>
+                </strong>.
+                Based on the rendered views, we then refine the action predictions. The network architecture employs
+                <strong>masked self-attention</strong> to have tokens from later
+                stages attend to tokens from previous stages. Language instruction tokens are merged into stage 0 image
+                tokens when input into transfer, which is omitted
+                in the figure for conciseness.
+              </p>
+              </br>
+              <img src="media/figures/flow.png" class="interpolation-image" alt="Interpolate start reference image." />
+              </br>
+              </br>
+              <p>
+                Our method iteratively
+                refines its <strong>3D action prediction</strong> (right) by rendering <strong>2D in-hand views</strong>
+                based
+                on the previous stage predictions (left). Color coding of gray, green, and
+                blue represent three action prediction stages respectively.
+              </p>
+              </br>
+              <img src="media/figures/teaser.png" class="interpolation-image" alt="Interpolate start reference image." style="width:700px; display: block; margin: 0 auto;"/>
+
+              <br />
+            </div>
+
+            <!--/ Re-rendering. -->
+
+            <h2 class="title is-3">Results</h2>
+
+            <p>
+              As presented in the table, VIHE surpasses all baselines in success rate when
+              averaged across all tasks. With 100 demonstrations, it outperforms the existing SOTA method RVT by 17
+              percentage points (a 28% relative improvement) and Act3D by 12 percentage points (an 18% relative
+              improvement). Our method's advantage increases when only 10 demonstrations are provided, outperforming
+              Act3D by 14 percentage points (a 29% relative improvement). Remarkably, our performance using 10
+              demonstrations per task is on par with the performance using 100 demonstrations per task for RVT and
+              Act3D.
+            </p>
+            <p>
+              These results demonstrate that our method is both more accurate and more sample-efficient
+              compared to existing state-of-the-art methods. The improvements mainly come from large gains in
+              challenging high-precision tasks.
+            </p>
+
+
+           
+            </br>
+
+            
+
+            </br>
+            <img src="media/figures/result_compare.png" class="interpolation-image"
+              alt="Interpolate start reference image." />
+            </br>
+            </br>
+
+          </div>
         </div>
-        </br>
-        <p>
-          Act3D is a Transformer manipulation policy trained with supervised learning to predict a 6-DoF end-effector pose from one or more RGB-D images, a language instruction, and proprioception.
-          The key idea is to <b>detect</b> end-effector poses in the robot's workspace by <b>learning 3D perceptual representations of free space with arbitrary spatial resolution</b> via recurrent coarse-to-fine 3D point grid sampling and featurization.
-        </p>
-        </br>
-        <img src="media/figures/flow.png" class="interpolation-image" 
-         alt="Interpolate start reference image." />
-        </br>
-        </br>
-          <p>
-              Act3D featurizes multi-view RGB images with a pre-trained 2D backbone and lifts them in 3D using depth to obtain a multi-scale 3D scene feature cloud.
-              It then iteratively predicts 3D foci of attention in the free space, samples 3D point grids in their vicinity, and featurizes the sampled 3D points using relative cross-attention to the physical scene feature cloud, language tokens, and proprioception.
-              Act3D detects the 3D point corresponding to the next best end-effector position using a detection Transformer head and regresses the rotation, end-effector opening, and collision avoidance action.
-          </p>
-        </br>
-        <img src="media/figures/teaser.png" class="interpolation-image" 
-         alt="Interpolate start reference image." />
-        <br/>
-
-        <!--/ Re-rendering. -->
-
-        <h2 class="title is-3">Results</h2>
-
-        <p>
-          We test Act3D in learning from demonstrations single-task and multi-task manipulation policies in simulation and the real world.
-          In simulation, we test Act3D in RLbench in two settings to ensure a clear comparison with prior work: a single-task setting with 74 tasks proposed by <a href="https://arxiv.org/pdf/2209.04899.pdf">HiveFormer</a> and a multi-task multi-variation setting with 18 tasks and 249 variations proposed by <a href="https://arxiv.org/abs/2209.05451">PerAct</a>.
-        </p>
-
-        </br>
-        <img src="media/figures/result.png" class="interpolation-image"
-         alt="Interpolate start reference image." />
-        </br>
-        </br>
-
-        <p>
-          <b>Single-task performance.</b> On 74 RLBench tasks across 9 categories, Act3D reaches 83% success rate, an absolute improvement of 10% over <a href="https://arxiv.org/abs/2210.13431">InstructRL</a>, prior SOTA in this setting.
-        </p>
-
-        </br>
-        <img src="media/figures/result_compare.png" class="interpolation-image"
-         alt="Interpolate start reference image." />
-        </br>
-        </br>
-
-        <p>
-          <b>Multi-task performance.</b> On 18 RLBench tasks with 249 variations, Act3D reaches 65% success rate, an absolute improvement of 22% over <a href="https://arxiv.org/abs/2209.05451">PerAct</a>, prior SOTA in this setting.
-        </p>
-
       </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!--
+  <!--
 <section class="section" id="BibTeX">
   <div class="container is-max-widescreen content">
     <h2 class="title">BibTeX</h2>
@@ -495,20 +561,22 @@ The <strong>VIHE</strong> is a manipulation transformer leveraging <strong>actio
 </section>
 -->
 
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column">
-        <div class="content has-text-centered">
-          <p>
-            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> made by the amazing <a href="https://keunhong.com/">Keunhong Park</a>. 
-          </p>
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content has-text-centered">
+            <p>
+              Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> made by
+              the amazing <a href="https://keunhong.com/">Keunhong Park</a>.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 
 </body>
+
 </html>
